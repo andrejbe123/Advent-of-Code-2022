@@ -1,0 +1,20 @@
+with open("day1.txt") as file:
+   lines = file.readlines()
+   elves = []
+   number = 0
+   summ = 0
+   for x in lines:
+      
+      x = x.strip()
+      if x.strip():
+         x_int = int(x)
+         number += x_int
+      else:
+         elves.append(number)
+         number = 0
+
+   final = sorted(elves, reverse = True)
+   for i in range(3):
+      summ += final[i] 
+print(final)
+print(summ)
